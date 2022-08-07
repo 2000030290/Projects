@@ -1,0 +1,58 @@
+<HTML xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<HEAD>
+<TITLE>Bookcar</TITLE>
+<style >
+body  {
+ 
+  background-image: url('sigbac.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  top:50%
+ 
+
+}
+h1 {color: maroon;}
+
+/* These are my styles! Yay! */
+</style>
+</HEAD>
+<BODY>
+<center>
+<h1>Book Your Car</h1>
+
+<h:form>
+ carname-model:<h:selectOneMenu value="#{user.name}" id="name" validatorMessage="must select one"> 
+   <f:selectItem itemValue = "Ferrari-F12berlinetta" itemLabel = "Ferrari-F12berlinetta" /> 
+   <f:selectItem itemValue = "Dodge SRT-2500" itemLabel = "Dodge SRT-2500" /> 
+   <f:selectItem itemValue = "Tesla-modelx" itemLabel = "Tesla-modelx"  /> 
+   <f:selectItem itemValue = "BMW-xtron" itemLabel = "BMW-xtron" />
+   <f:selectItem itemValue = "Hyundai-i20" itemLabel = "Hyundai-i20" /> 
+   
+   <f:validateRequired/>
+</h:selectOneMenu> 
+<br/><br/>
+ car-Color:<h:selectOneMenu value="#{user.address}" id="address" validatorMessage="must select one"> 
+   <f:selectItem itemValue = "Metallic" itemLabel = "Metallic" /> 
+   <f:selectItem itemValue = "Black" itemLabel = "Black" /> 
+      <f:selectItem itemValue ="Red" itemLabel = "Red" /> 
+   <f:selectItem itemValue = "Blue" itemLabel = "Blue" /> 
+   <f:validateRequired/>
+</h:selectOneMenu> 
+<br/><br/>
+carFuel-Type:<h:selectOneMenu value="#{user.mobileno}" id="mobileno" validatorMessage="must select one"> 
+   <f:selectItem itemValue = "Petrol" itemLabel = "Petrol" /> 
+   <f:selectItem itemValue = "Diesel" itemLabel = "Diesel" /> 
+      <f:selectItem itemValue ="Electricity" itemLabel = "Electricity" /> 
+      <f:validateRequired/>
+</h:selectOneMenu> 
+<br/><br/>
+ 
+  <h:commandButton action="step2.xhtml" value="Continue" />
+  
+  </h:form>
+  
+</center>
+</BODY>
+</HTML>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+h1 {color: maroon;}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+
+  border-radius: 5px 5px 0 0;
+}
+
+.container {
+  padding: 2px 16px;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#about">About</a></li>
+  <li><a href="#contactus">Contactus</a></li>
+  
+  <li style="float:right"><a href="#about">#{user.name}</a></li>
+</ul>
+<center>
+<h2>Cars Available</h2>
+
+<div class="card">
+  <img src="ferari.jpg" alt="Avatar" style="width:100%"/>
+  <div class="container">
+    <h4><b>Ferrari-F12berlinetta</b></h4> 
+    <p><b>Color:</b> Black<br/>
+	<b>Horse Power:</b>545 (740) AT 8250 RPM KW (HP)<br/>
+	<b>Total Seating:</b>2<br/>
+	<b>Price:</b>$1,87,723</p> 
+  </div>
+</div>
+
+
+<div class="card">
+  <img src="dodge.jpg" alt="Avatar" style="width:100%"/>
+  <div class="container">
+    <h4><b>Dodge SRT-2500</b></h4> 
+    <p><b>Color:</b>Red<br/>
+	<b>Horse Power:</b>717 hp @ 6,000 rpm<br/>
+	<b>Total Seating:</b>5<br/>
+	<b>Price:</b>$59570</p> 
+  </div>
+</div>
+
+<div class="card">
+  <img src="tesla.jpg" alt="Avatar" style="width:100%"/>
+  <div class="container">
+    <h4><b>Tesla-modelx</b></h4> 
+    <p><b>Color:</b> Black<br/>
+	<b>Horse Power:</b>545 (740) AT 8250 RPM KW (HP)<br/>
+	<b>Total Seating:</b>2<br/>
+	<b>Price:</b>$1,87,723</p> 
+  </div>
+</div>
+
+<div class="card">
+  <img src="bmw.jpg" alt="Avatar" style="width:100%"/>
+  <div class="container">
+    <h4><b>BMW-xtron</b></h4> 
+    <p><b>Color:</b> Black<br/>
+	<b>Horse Power:</b>545 (740) AT 8250 RPM KW (HP)<br/>
+	<b>Total Seating:</b>6<br/>
+	<b>Price:</b>$1,87,723</p> 
+  </div>
+</div>
+
+<div class="card">
+  <img src="i20.jpg" alt="Avatar" style="width:100%"/>
+  <div class="container">
+    <h4><b>Hyundai-i20</b></h4> 
+    <p><b>Color:</b> white<br/>
+	<b>Horse Power:</b>545 (740) AT 8250 RPM KW (HP)<br/>
+	<b>Total Seating:</b>2<br/>
+	<b>Price:</b>$1,87,723</p> 
+  </div>
+</div>
+<br/>
+<br/>
+<h:form>
+<h:commandButton action="bill" value="Buy a Car!!" />
+</h:form>
+</center>
+</body>
+</html> 

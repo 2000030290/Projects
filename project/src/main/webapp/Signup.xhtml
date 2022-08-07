@@ -1,0 +1,91 @@
+<HTML xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<HEAD>
+<TITLE>Sign-up page</TITLE>
+<style >
+body  {
+ 
+  background-image: url('sigbac.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  top:50%
+ 
+
+}
+h1 {color: maroon;}
+
+/* These are my styles! Yay! */
+</style>
+</HEAD>
+<BODY>
+<center>
+<h1>Sign Up/ Register</h1>
+
+<h:form>
+  Name:<h:inputText value="#{user.name}" id="name" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="name" style="color:red"/>
+  <br/><br/>
+  User-type:<h:selectOneMenu validatorMessage="must select one"> 
+   <f:selectItem itemValue = "1" itemLabel = "admin" /> 
+   <f:selectItem itemValue = "2" itemLabel = "customer" /> 
+   <f:validateRequired/>
+</h:selectOneMenu> 
+<br/><br/>
+  Age:<h:inputText value="#{user.age}" id="age" validatorMessage="Age should btwn 20 and 50">
+  <f:validateLongRange minimum="20" maximum="50"/>
+  
+  </h:inputText>
+  <h:message for="age" style="color:red"  />
+  <br/><br/>
+   Gender:<h:inputText value="#{user.gender}" id="gender" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="gender" style="color:red"/>
+  <br/><br/>
+  MobileNo:<h:inputText value="#{user.mobileno}"  id="mno" validatorMessage="Mobile No Should have 10 digit">
+  <f:validateLength minimum="10" maximum="10"/>
+  </h:inputText>
+  <h:message for="mno" style="color:red"/>
+  <br/><br/>
+  Address:<h:inputText value="#{user.address}" id="address" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="address" style="color:red"/>
+  <br/><br/>
+  Email:<h:inputText value="#{user.email}" id="email" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="email" style="color:red"/>
+  <br/><br/>
+  Password:<h:inputSecret value="#{user.password}"  id="password" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputSecret>
+  <h:message for="password" style="color:red"/>
+  <br/><br/>
+  ConfirmPassword:<h:inputSecret  id="confirmPassword" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputSecret>
+  <h:message for="confirmPassword" style="color:red"/>
+  <br/><br/>
+  
+  
+  
+  <h:commandButton action="#{user.insert()}" value="Submit" />
+  
+  </h:form>
+  <h:form>If already have an account
+<h:commandLink action="Login" value="Login" />
+<h:commandLink action="#{user.find()}" value="find" />
+<p><h:outputLabel value="#{user.response}" />
+
+		</p>
+
+<br/><br/>
+
+</h:form>
+</center>
+</BODY>
+</HTML>

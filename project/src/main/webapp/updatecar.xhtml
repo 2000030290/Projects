@@ -1,0 +1,78 @@
+<HTML xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+<HEAD>
+<style >
+
+
+h1 {color: maroon;}
+body {
+  background-image: url('bg1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+  top:50%
+ 
+}
+.content {
+  max-width: 500px;
+  margin: auto;
+	top:50%;
+  padding: 10px;
+}
+/* These are my styles! Yay! */
+</style>
+<TITLE>Update Car</TITLE>
+
+</HEAD>
+<BODY>
+
+<center>
+<H3>Update Car</H3>
+<DIV class="content">
+<h:form>
+
+  Same Car-ID:<h:inputText value="#{user.age}" id="age" validatorMessage="id must be a number">
+  <f:validateLongRange/>
+  
+  </h:inputText>
+   <h:message for="age" style="color:red"  />
+  <br/><br/>
+  updated-Name:<h:inputText value="#{user.name}" id="name" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="name" style="color:red"/>
+  <br/><br/>
+
+ 
+   updated-model:<h:inputText value="#{user.email}" id="email" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="email" style="color:red"/>
+   
+ <br/><br/>
+  updated-color:<h:inputText value="#{user.address}" id="address" validatorMessage="Value is required">
+  <f:validateRequired/>
+  </h:inputText>
+  <h:message for="address" style="color:red"/>
+  
+ 
+  <br/><br/>
+   updated-Price:<h:inputText value="#{user.mobileno}" id="mobileno" validatorMessage="price must be a number">
+  <f:validateLongRange minimum="20" />
+  
+  </h:inputText>
+   <h:message for="age" style="color:red"  />
+  <br/><br/>
+ 
+  
+  
+  <h:commandButton action="res3.xhtml" value="Submit" />
+  
+  </h:form>
+  
+
+
+  </DIV>
+  </center>
+</BODY>
+</HTML>
